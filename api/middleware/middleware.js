@@ -1,5 +1,7 @@
 function logger(req, res, next) {
   // DO YOUR MAGIC
+  console.log(`it is a ${req.method} request to ${req.originalUrl}`);
+  next();
 }
 
 function validateUserId(req, res, next) {
@@ -15,3 +17,6 @@ function validatePost(req, res, next) {
 }
 
 // do not forget to expose these functions to other modules
+module.exports = {
+  logger,
+};
